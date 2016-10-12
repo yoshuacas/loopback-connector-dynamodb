@@ -15,8 +15,8 @@ describe('DynamoDb', function() {
 
 	before(function() {
 		db = getDataSource();
-
-		Thread = db.define (modelDefinition.threadModelDefinition);
+		var threadModelDefinition = modelDefinition.threadModelHashAndRange;
+		Thread = db.define (threadModelDefinition[0],threadModelDefinition[1],threadModelDefinition[2]);
 
 
 	});
